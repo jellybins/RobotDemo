@@ -1,1 +1,2 @@
-## test egit conflict conflict
+## test egit conflict 
+conflict two
