@@ -1,2 +1,3 @@
 ## test egit conflict 
-conflict two
+###conflict two
+###conflict three
