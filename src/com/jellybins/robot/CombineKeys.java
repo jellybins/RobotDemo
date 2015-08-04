@@ -2,19 +2,19 @@ package com.jellybins.robot;
 
 /**
  * 
- * ×éºÏ°´¼ü
+ * ç»„åˆçƒ­é”®
  * @author Jelly
  *
  */
 public class CombineKeys {
 	
-	/** ×éºÏ¼ü1 */
+	/** çƒ­é”®1 */
 	private int key1;
-	/** ×éºÏ¼ü2 */
+	/** çƒ­é”®2 */
 	private int key2;
 	
 	/**
-	 * ÎŞ²Î¹¹Ôì
+	 * æ— å‚æ„é€ 
 	 */
 	public CombineKeys(){}
 	

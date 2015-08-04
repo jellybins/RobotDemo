@@ -9,7 +9,7 @@ import com.melloware.jintellitype.JIntellitype;
 
 /**
  * 
- * 重复粘贴剪切板文字到光标�?��窗口后发�? * @author Jelly
+ * 重复粘贴剪切板文字到光标�?��窗口后发�? * @author Jelly
  * 
  */
 public class RobotDemo implements HotkeyListener {
@@ -87,7 +87,8 @@ public class RobotDemo implements HotkeyListener {
 			this.runFlag = false;
 			break;
 		case KeyEvent.VK_X:
-			//停止运行后销�?			this.runFlag = false;
+			//停止运行后销毁			
+			this.runFlag = false;
 			this.destroy();
 		}
 	}
