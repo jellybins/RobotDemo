@@ -9,7 +9,8 @@ import com.melloware.jintellitype.JIntellitype;
 
 /**
  * 
- * 重复粘贴剪切板文字到光标�?��窗口后发�? * @author Jelly
+ * 重复粘贴剪切板文字到光标所在窗口后发送 
+ * @author Jelly
  * 
  */
 public class RobotDemo implements HotkeyListener {
@@ -24,8 +25,8 @@ public class RobotDemo implements HotkeyListener {
 	public static final CombineKeys ctrlV = new CombineKeys(
 			KeyEvent.VK_CONTROL, KeyEvent.VK_V);// Ctrl+V
 
-	//按键延迟
-	public static final int keyDelay = 1 * 100;// 毫秒
+	/** 每keyDelay*5毫秒完成一次消息发送动作 */
+	public static final int keyDelay = 2 * 10;//按键延迟
 
 	public static boolean runFlag = false;
 
@@ -54,7 +55,7 @@ public class RobotDemo implements HotkeyListener {
 
 				while (runFlag) {
 					rbDemo.pressCombineKeys(robot, ctrlV);
-					rbDemo.pressKey(robot, KeyEvent.VK_ENTER);
+					rbDemo.pressKey(robot,KeyEvent.VK_ENTER);
 				}
 
 			}
@@ -64,17 +65,20 @@ public class RobotDemo implements HotkeyListener {
 	}
 
 	public static void pressKey(Robot robot, int keyvalue) {
-		robot.keyPress(keyvalue);
-		robot.keyRelease(keyvalue);
 		robot.delay(keyDelay);
+		robot.keyPress(keyvalue);
+		robot.delay(keyDelay);
+		robot.keyRelease(keyvalue);
 	}
 
 	public static void pressCombineKeys(Robot robot, CombineKeys combineKeys) {
+		robot.delay(keyDelay);
 		robot.keyPress(combineKeys.getKey1());
+		robot.delay(keyDelay);
 		robot.keyPress(combineKeys.getKey2());
 		robot.keyRelease(combineKeys.getKey2());
-		robot.keyRelease(combineKeys.getKey2());
 		robot.delay(keyDelay);
+		robot.keyRelease(combineKeys.getKey1());
 	}
 
 	@Override
@@ -87,7 +91,7 @@ public class RobotDemo implements HotkeyListener {
 			this.runFlag = false;
 			break;
 		case KeyEvent.VK_X:
-			//停止运行后销毁			
+			//停止运行后解除热键注册			
 			this.runFlag = false;
 			this.destroy();
 		}
