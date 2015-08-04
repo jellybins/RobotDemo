@@ -32,7 +32,7 @@ public class RobotDemo implements HotkeyListener {
 
 	public RobotDemo() {
 
-		// 注册热键
+		/** 注册热键 */
 		JIntellitype.getInstance().registerHotKey(KeyEvent.VK_R,
 				JIntellitype.MOD_CONTROL + JIntellitype.MOD_ALT, KeyEvent.VK_R);
 		JIntellitype.getInstance().registerHotKey(KeyEvent.VK_S,
@@ -64,14 +64,14 @@ public class RobotDemo implements HotkeyListener {
 		}
 	}
 
-	public static void pressKey(Robot robot, int keyvalue) {
+	public void pressKey(Robot robot, int keyvalue) {
 		robot.delay(keyDelay);
 		robot.keyPress(keyvalue);
 		robot.delay(keyDelay);
 		robot.keyRelease(keyvalue);
 	}
 
-	public static void pressCombineKeys(Robot robot, CombineKeys combineKeys) {
+	public void pressCombineKeys(Robot robot, CombineKeys combineKeys) {
 		robot.delay(keyDelay);
 		robot.keyPress(combineKeys.getKey1());
 		robot.delay(keyDelay);
@@ -85,14 +85,14 @@ public class RobotDemo implements HotkeyListener {
 	public void onHotKey(int key) {
 		switch (key) {
 		case KeyEvent.VK_R:
-			this.runFlag = true;
+			RobotDemo.runFlag = true;
 			break;
 		case KeyEvent.VK_S:
-			this.runFlag = false;
+			RobotDemo.runFlag = false;
 			break;
 		case KeyEvent.VK_X:
 			//停止运行后解除热键注册			
-			this.runFlag = false;
+			RobotDemo.runFlag = false;
 			this.destroy();
 		}
 	}
