@@ -36,19 +36,6 @@ public class RobotDemo implements HotkeyListener {
 	
 	private String repeatContent = "小娜抱抱";//刷屏内容
 
-	public RobotDemo() {
-
-		/** 注册热键 */
-		JIntellitype.getInstance().registerHotKey(KeyEvent.VK_R,
-				JIntellitype.MOD_CONTROL + JIntellitype.MOD_ALT, KeyEvent.VK_R);
-		JIntellitype.getInstance().registerHotKey(KeyEvent.VK_S,
-				JIntellitype.MOD_CONTROL + JIntellitype.MOD_ALT, KeyEvent.VK_S);
-		JIntellitype.getInstance().registerHotKey(KeyEvent.VK_X,
-				JIntellitype.MOD_CONTROL + JIntellitype.MOD_ALT, KeyEvent.VK_X);
-
-		JIntellitype.getInstance().addHotKeyListener(this);
-	}
-
 	public static void main(String[] args) throws Exception {
 		try {
 			// 初始化
