@@ -20,7 +20,7 @@
 * 运行方式:
 
 1. 将libs库中JIntellitype.dll文件放置到非管理员权限的Path环境变量目录中
-2. docs目录下有编译好的Jar包和运行批处理文件runRobot.bat,更改runRobot.bat文件中jre路径为本机路径
+2. docs目录下有编译好的Jar包和运行批处理文件runRobot.bat,更改批处理文件中jre路径
 3. 双击批处理文件执行程序,将光标置于需要刷屏聊天窗口
 4. 默认刷屏内容为‘小娜抱抱’,如需其它默认刷屏内容请在程序内自行更改或在开始刷屏前自行复制
 5. 按Ctrl+Alt+R开始刷屏，Ctrl+Alt+S停止刷屏，Ctrl+Alt+X退出程序
