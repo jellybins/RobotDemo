@@ -107,6 +107,7 @@ public class RobotDemo implements HotkeyListener {
 	}
 	
 	
+	/** 解除热键注册并退出 */
 	private void destroy() {
 		JIntellitype.getInstance().unregisterHotKey(KeyEvent.VK_R);
 		JIntellitype.getInstance().unregisterHotKey(KeyEvent.VK_S);
